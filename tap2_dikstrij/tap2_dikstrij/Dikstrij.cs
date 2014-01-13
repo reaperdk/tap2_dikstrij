@@ -18,7 +18,7 @@ namespace tap2_dikstrij
         //MAX_GESTOSC = 3
         //MIN_D = 0.5
         //MAX_D = 0.6
-
+		
         public void GenerateRandomPoints(int numberOfPoints)
         {
             Random rnd = new Random();
@@ -43,18 +43,26 @@ namespace tap2_dikstrij
                 }
             }
         }
+		
+		public double Hypotenuse (double a, double b)
+		{
+			return Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2));
+		}
 
-        public Rectangle GenerateSearchingField(Point start, Point end, int level)
+        public Rectangle GenerateSearchingField(Point start, Point end, double level)
         {
             //need 4 equations
-
-            Rectangle r = new Rectangle();
-            r.Width = 5;
-            r.Height = 5;
+			var extPoints = ExtendedPoints(start, end, (double)level);
+			double length = Hypotenuse(p2.X-p1.X, p2.Y-p1.Y) * level;
 
 
             return new Rectangle();
         }
+		
+		public 
+		
+		
+		
 
         public double[] GiveLineAB(Point p1, Point p2)
         {
@@ -94,5 +102,8 @@ namespace tap2_dikstrij
             extendedPoints[1] = p4;
             return extendedPoints;
         }
+		
+		
+		
     }
 }
