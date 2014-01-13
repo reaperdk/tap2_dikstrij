@@ -9,6 +9,7 @@ namespace tap2_dikstrij
 {
     public class Dikstrij
     {
+		//change
         private List<Point> _pointList = new List<Point>();
         private Dictionary<Point, Point> _connectionList = new Dictionary<Point, Point>();
         private int _numOfConnections;
